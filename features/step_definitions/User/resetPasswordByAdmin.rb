@@ -12,11 +12,11 @@ Given('I have valid change password user data') do
     # Assign the ACCESS_TOKEN value to @access_token
   @access_token = ACCESS_TOKEN
   # Generate random email and password
-  random_string = (0...8).map { ('a'..'z').to_a[rand(26)] }.join
+  @random_string = (0...8).map { ('a'..'z').to_a[rand(26)] }.join
   @random_number = rand(1000..9999)
   
   @password = "Pass#{@random_number}"
-  @base_url = 'https://api.staging.satudental.com/admin/users' + $created_user_id.to_s + '/reset-password'
+  @base_url = 'https://api.staging.satudental.com/admin/users/' + $created_user_id.to_s + '/reset-password'
   @headers =   { "Authorization" => "Bearer #{@access_token}", 'Content-Type' => 'application/json' }
   @body = {
     new_password: @password

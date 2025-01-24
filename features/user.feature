@@ -21,7 +21,7 @@ Feature: Create user Endpoint
     When I send a PATCH request to the endpoint update status user data
     Then the response update status user status code should be 200
   
-  Scenario: Successfully Change Passoword a user with valid data
+  Scenario: Successfully Change Password a user with valid data
     Given I have valid change password user data
     When I send a POST request to the endpoint change password user data
     Then the response change password user status code should be 200

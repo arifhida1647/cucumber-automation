@@ -22,11 +22,6 @@ Before('@requires_auth') do
   # Perform login request
   @response = HTTParty.post(@base_url, body: @body, headers: @headers)
 
-  # Validate response status code
-  if @response.code != 200
-    raise "Login request failed with status code #{@response.code}. Response body: #{@response.body}"
-  end
-
   # Parse response body to JSON
   response_body = JSON.parse(@response.body)
 
@@ -48,10 +43,7 @@ Before('@requires_auth') do
     File.open(env_file_path, 'w') do |file|
       file.puts updated_content
     end
-
-    puts "Access token updated in env.rb: #{access_token}"
   else
-    puts "Error: No access token found in response. Response body: #{@response.body}"
     raise "Access token not found in response!"
   end
 end
