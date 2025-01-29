@@ -3,6 +3,7 @@ Feature: Auth Feature
   I want to log in to the application
   So that I can access my account
 
+ @requires_auth
   Scenario: Successful login with valid credentials
     Given I have a valid username and password
     When I log in with the username and password
