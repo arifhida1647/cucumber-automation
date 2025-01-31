@@ -1,13 +1,14 @@
 require 'httparty'
 require 'faker'
 
-Given("I have an existing booking with status ON_TREATMENT") do
+Given("I have an existing booking with status ARRIVED") do
   @payload = {
       status: "ON_TREATMENT",
       clinic_room_id: 67,
       is_approve_consent: true,
       main_medical_personnel_id: 193,
-      secondary_medical_personnel_id: nil
+      secondary_medical_personnel_id: nil,
+      create_rm: true
 }
 end
 

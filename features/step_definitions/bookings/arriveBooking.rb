@@ -1,7 +1,7 @@
 require 'httparty'
 require 'faker'
 
-Given("I have an existing booking with status ARRIVED") do
+Given("I have an existing booking with status BOOKING") do
   @payload = {
       status: "ARRIVED",
       clinic_room_id: 67,

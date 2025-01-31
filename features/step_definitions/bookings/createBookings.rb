@@ -15,7 +15,7 @@ Given("I have a valid booking payload for an existing patient") do
 
   @payload = {
     clinic_id: 119,
-    patient_id:$patient_id,
+    patient_id:4143,
     doctor_id: 193,
     start_time: start_time.iso8601, # Format ISO 8601
     end_time: end_time.iso8601,     # Format ISO 8601
